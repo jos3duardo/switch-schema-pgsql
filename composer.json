@@ -5,7 +5,7 @@
     "keywords": ["laravel","postgres","schema"],
     "autoload": {
         "psr-4": {
-            "Jos3duardo": "src/"
+            "Jos3duardo\\": "src/"
         }
     },
     "authors": [
