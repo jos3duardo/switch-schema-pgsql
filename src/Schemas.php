@@ -1,6 +1,6 @@
 <?php
 
-namespace Jos3duardo\Schemas;
+namespace Jos3duardo;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
