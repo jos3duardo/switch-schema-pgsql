@@ -77,7 +77,7 @@ class Schemas
     {
         $this->switchTo($schema);
 
-        if ($this->tableExists($schema, 'migrations')) {
+        if (!$this->tableExists($schema, 'migrations')) {
             Artisan::call('migrate:install');
         }
 
