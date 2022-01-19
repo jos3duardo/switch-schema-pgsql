@@ -1,20 +1,28 @@
 <?php
+
 namespace Jos3duardo\SwitchSchemaPgsql;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 
+/**
+ *  Class Schemas
+ *
+ * @package Jos3duardo\SwitchSchemaPgsql
+ */
 class Schemas
 {
-    protected function listTables($schema) {
+    protected function listTables($schema)
+    {
         return DB::table('information_schema.tables')
             ->select('table_name')
             ->where('table_schema', $schema)
             ->get();
     }
 
-    protected function tableExists($schema, $tableName) {
+    protected function tableExists($schema, $tableName)
+    {
         $tables = $this->listTables($schema);
         foreach ($tables as $table) {
             if ($table->table_name === $tableName) {
@@ -46,7 +54,7 @@ class Schemas
             $schema = [$schema];
         }
 
-        $query = 'SET search_path TO ' . implode(',',$schema);
+        $query = 'SET search_path TO ' . implode(',', $schema);
 
         DB::statement($query);
     }
@@ -68,7 +76,8 @@ class Schemas
     public function migrate($schema, $args = [])
     {
         $this->switchTo($schema);
-        if ($this->tableExists($schema, 'migrations')){
+
+        if ($this->tableExists($schema, 'migrations')) {
             Artisan::call('migrate:install');
         }
 
