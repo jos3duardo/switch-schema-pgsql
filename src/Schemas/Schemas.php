@@ -1,6 +1,6 @@
 <?php
 
-namespace Jos3duardo\SwitchSchemaPgsql;
+namespace Jos3duardo\Schemas;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 /**
  *  Class Schemas
  *
- * @package Jos3duardo\SwitchSchemaPgsql
+ * @package Jos3duardo\Schemas
  */
 class Schemas
 {

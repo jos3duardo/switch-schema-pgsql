@@ -1,6 +1,6 @@
 <?php
 
-namespace Jos3duardo\SwitchSchemaPgsql\Facades;
+namespace Jos3duardo\Schemas\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
